@@ -8,7 +8,16 @@
   <link rel="stylesheet" href="./index.scss">
 </head>
 <body>
-  <h1>할 일 목록</h1>
+  <div class="root"></div>
+
+  <template id="todo-list">
+    <h1>할 일 목록</h1>
+    <form class="todo-list__form">
+      <input type="body" class="todo-list__body-input">
+      <button class="todo-list__submit-btn">할 일 추가</button>
+    </form>
+  </template>
+
   <script src="./index.js"></script>
 </body>
 </html>
