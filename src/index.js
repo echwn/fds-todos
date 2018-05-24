@@ -19,6 +19,7 @@ function render(fragment) {
 async function indexPage() {
   const res = await todoAPI.get('/todos');
   const listFragment = document.importNode(templates.todoList, true);
+  const itemFragment = document.importNode(templates.todoItem, true);
 
   listFragment.querySelector('.todo-list__form').addEventListener('submit', async e => {
     e.preventDefault();
@@ -31,9 +32,20 @@ async function indexPage() {
 
   res.data.forEach(todo => {
     const itemFragment = document.importNode(templates.todoItem, true);
-    itemFragment.querySelector('.todo-item__body').textContent = todo.body;
+    const bodyEl = itemFragment.querySelector('.todo-item__body');
+    bodyEl.textContent = todo.body;
+    const removeBtnEl = itemFragment.querySelector('.todo-item__remove-btn');
+    const completeBtnEl = itemFragment.querySelector('.todo-item__complete-btn');
+    itemFragment.querySelector('.todo-item__remove-btn').addEventListener('click', async e => {
+      bodyEl.remove();
+      removeBtnEl.remove();
+      completeBtnEl.remove();
+      const res = await todoAPI.delete(`/todos/${todo.id}`)
+    })
+
     listFragment.appendChild(itemFragment);
   })
+
 
   render(listFragment);
 }
