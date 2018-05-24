@@ -5,5 +5,18 @@
       "username": "fds"
     }
   ],
-  "todos": []
+  "todos": [
+    {
+      "body": "agkjdsglkjds;",
+      "id": 5
+    },
+    {
+      "body": "ag;jds;glkjasdg;l",
+      "id": 6
+    },
+    {
+      "body": "adgja;dlskgja;dslkgjs",
+      "id": 7
+    }
+  ]
 }

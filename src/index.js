@@ -42,6 +42,10 @@ async function indexPage() {
       completeBtnEl.remove();
       const res = await todoAPI.delete(`/todos/${todo.id}`)
     })
+    
+    itemFragment.querySelector('.todo-item__complete-btn').addEventListener('click', async e => {
+      bodyEl.classList.add('todo-item__body--complete');
+    })
 
     listFragment.appendChild(itemFragment);
   })
