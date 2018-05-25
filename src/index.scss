@@ -1,9 +1,64 @@
-$main-color: skyblue;
+$main-color: #f4f4f4;
+$input-color: #fff;
+$border-color: #eee;
 
 body {
   background-color: $main-color;
 }
 
-.todo-item__body--complete {
-  text-decoration: line-through;
+h1 {
+  padding-left: 20px;
+}
+
+.todo-list {
+  &__form {
+    padding: 0 20px;
+    margin: 10px auto;
+  }
+
+  &__body-input {
+    border-radius: 5px;
+    height: 40px;
+    border: 0;
+    background-color: $input-color;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+    width: calc(100% - 45px);
+  }
+  &__submit-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+    background-color: #b4eaea;
+  }
+}
+
+.todo-item {
+  &__list {
+    padding: 0 20px;
+  }
+
+  &__body {
+    display: inline-block;
+    background-color: $input-color;
+    border-radius: 5px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: calc(100% - 90px);
+    margin: 10px auto;
+  }
+
+  &__body--complete {
+    text-decoration: line-through;
+    color: #e0e0e0;
+  }
+
+  &__complete-btn, &__remove-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+  }
 }
