@@ -1,6 +1,7 @@
 $main-color: #f4f4f4;
 $input-color: #fff;
 $border-color: #eee;
+$alpha-color: rgba(255, 255, 255, .6);
 
 body {
   background-color: $main-color;
@@ -41,7 +42,7 @@ h1 {
 
   &__body {
     display: inline-block;
-    background-color: $input-color;
+    background-color: $alpha-color;
     border-radius: 5px;
     height: 40px;
     box-sizing: border-box;
@@ -56,6 +57,7 @@ h1 {
   }
 
   &__complete-btn, &__remove-btn {
+    background-color: $alpha-color;
     height: 40px;
     width: 40px;
     border-radius: 5px;
